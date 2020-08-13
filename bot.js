@@ -28,7 +28,7 @@ var bot = new Discord.Client({
 
 bot.on('ready', function (evt) {
    logger.info('Connected');
-   logger.info('Logged in as: Isaac');
+   logger.info('Logged in as: \[\"insert your name or whatever\"\]');
    logger.info(bot.username + ' - (' + bot.id + ')');
 });
 bot.on('message', function (User, UserID, channelID, message, evt) {
