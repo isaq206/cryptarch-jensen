@@ -28,7 +28,7 @@ var bot = new Discord.Client({
 
 bot.on('ready', function (evt) {
    logger.info('Connected');
-   logger.info('Logged in as: \[\"insert your name or whatever\"\]');
+   logger.info('Logged in as: **insert your name or whatever**');
    logger.info(bot.username + ' - (' + bot.id + ')');
 });
 bot.on('message', function (User, UserID, channelID, message, evt) {
@@ -101,96 +101,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
             });
 
             break;
-/*
-//Here is the command for adding onself to the Guardian role
-//
-//
-         case 'addGuardian':
-            bot.deleteMessage({
-               channelID: channelID,
-               messageID: evt.d.id
-            });
-
-            bot.addToRole( {"serverID": '605782144026935296', 
-"userID": UserID, "roleID": '605870351007875072'}, function(err, response) {
-               if(err) {
-                  logger.info(err);
-               }
-            });
-
-            bot.sendMessage({
-               to: channelID,
-               message: 'You are now added to the role of Guardian!'
-            });
-            break;
-
-//Here is the command for removing oneself from the Guardian role
-//
-//
-         case 'removeGuardian':
-            bot.deleteMessage({
-               channelID: channelID,
-               messageID: evt.d.id
-            });
-
-            bot.removeFromRole( {"serverID": '605782144026935296', 
-"userID": UserID, "roleID": '605870351007875072'}, function(err, response) {
-               if(err) {
-                  logger.info(err);
-               }
-            });
-
-            bot.sendMessage({
-               to: channelID,
-               message: 'You are now removed from the role of Guardian!'
-            });
-            break;
 
 
-//Here is the command for adding onself to the "People of the City" role
-//
-//
-         case 'addPeople':
-            bot.deleteMessage({
-               channelID: channelID,
-               messageID: evt.d.id
-            });
-
-            bot.addToRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '605870612728250370'}, function(err, response) {
-               if(err) {
-                  logger.info(err);
-               }
-            });
-
-            bot.sendMessage({
-               to: channelID,
-               message: 'You are now added to the role of People of the City!'
-            });
-            break;
-
-//Here is the command for removing oneself from the "People of the City" role
-//
-//
-         case 'removePeople':
-            bot.deleteMessage({
-               channelID: channelID,
-               messageID: evt.d.id
-            });
-
-            bot.removeFromRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '605870612728250370'}, function(err, response) {
-               if(err) {
-                  logger.info(err);
-               }
-            });
-
-            bot.sendMessage({
-               to: channelID,
-               message: 'You are now removed from the role of People of the City!'
-            });
-            break;
-*/
 
 /********************************************
 * Here are the commands relating to Raid group
@@ -207,8 +119,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
                messageID: evt.d.id
             });
 
-            bot.addToRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '732351606951247894'}, function(err, response) {
+            bot.addToRole( {"serverID": '**Insert Server ID here**',
+"userID": UserID, "roleID": '**Insert Role ID here**'}, function(err, response) {
                if(err) {
                   logger.info(err);
                }
@@ -224,8 +136,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
                messageID: evt.d.id
             });
 
-            bot.removeFromRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '732351606951247894'}, function(err, response) {
+            bot.removeFromRole( {"serverID": '**Insert Server ID here**',
+"userID": UserID, "roleID": '**Insert Role ID here**'}, function(err, response) {
                if(err) {
                   logger.info(err);
                }
@@ -242,7 +154,7 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
             });
 
             var raidGroup1 = Object.values(bot.servers[evt.d.guild_id].members)
-                  .filter(m => m.roles.includes('732351606951247894'))
+                  .filter(m => m.roles.includes('**Insert Role ID here**'))
                   .map(m => m.username + " \n").join('')
 
             bot.sendMessage({
@@ -266,8 +178,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
                messageID: evt.d.id
             });
 
-            bot.addToRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '732352103275823185'}, function(err, response) {
+            bot.addToRole( {"serverID": '**Insert Server ID here**',
+"userID": UserID, "roleID": '*Insert Role ID here**'}, function(err, response) {
                if(err) {
                   logger.info(err);
                }
@@ -283,8 +195,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
                messageID: evt.d.id
             });
 
-            bot.removeFromRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '732352103275823185'}, function(err, response) {
+            bot.removeFromRole( {"serverID": '**Insert Server ID here**',
+"userID": UserID, "roleID": '**Insert Role ID here**'}, function(err, response) {
                if(err) {
                   logger.info(err);
                }
@@ -301,7 +213,7 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
             });
 
             var raidGroup2 = Object.values(bot.servers[evt.d.guild_id].members)
-                  .filter(m => m.roles.includes('732352103275823185'))
+                  .filter(m => m.roles.includes('**Insert Role ID here**'))
                   .map(m => m.username + " \n").join('')
 
             bot.sendMessage({
@@ -323,8 +235,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
                messageID: evt.d.id
             });
 
-            bot.addToRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '732352284352053329'}, function(err, response) {
+            bot.addToRole( {"serverID": '**Inset Server ID here**',
+"userID": UserID, "roleID": '**Insert Role ID here**'}, function(err, response) {
                if(err) {
                   logger.info(err);
                }
@@ -340,8 +252,8 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
                messageID: evt.d.id
             });
 
-            bot.removeFromRole( {"serverID": '605782144026935296',
-"userID": UserID, "roleID": '732352284352053329'}, function(err, response) {
+            bot.removeFromRole( {"serverID": '**Insert Server ID here**',
+"userID": UserID, "roleID": '**Insert Role ID here**'}, function(err, response) {
                if(err) {
                   logger.info(err);
                }
@@ -358,7 +270,7 @@ bot.on('message', function (User, UserID, channelID, message, evt) {
             });
 
             var raidGroup3 = Object.values(bot.servers[evt.d.guild_id].members)
-                  .filter(m => m.roles.includes('732352284352053329'))
+                  .filter(m => m.roles.includes('**Insert Role ID here**'))
                   .map(m => m.username + " \n").join('')
 
             bot.sendMessage({
